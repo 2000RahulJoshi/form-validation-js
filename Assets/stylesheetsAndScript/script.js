@@ -110,9 +110,9 @@ function checkName(fullname){
     //     document.getElementById("userNameError").innerHTML = "";
     //     return false;
     // }
-
+    fullname = fullname.trimEnd()
     let splitName = fullname.split(' ');
-    console.log(splitName)
+
     if(splitName == ''){
         document.getElementById("userNameError").innerHTML = "** Name can not be empty";
         return true;
@@ -148,6 +148,7 @@ function chekPhoneNo(phoneNo){
     // }
     let flag = false;
     phoneNo = phoneNo.toString();
+    phoneNo = phoneNo.trimEnd();
     // console.log(typeof phoneNo)
     for(let i=0;i<phoneNo.length;i++){
         if(!(phoneNo[i]>='0' && phoneNo[i]<='9' && phoneNo.length == 10 && (phoneNo[0] == '7' || phoneNo[8] == '8' || phoneNo[9] == '9'))){
