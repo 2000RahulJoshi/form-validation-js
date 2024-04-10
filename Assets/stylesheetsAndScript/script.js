@@ -95,6 +95,7 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     document.getElementById("spin").style.display = "block"
     setTimeout(function(){
         myForm.reset();
+        document.getElementById("spin").style.display = "none"
         window.location.href = "display.html";
     },1000);
 });
