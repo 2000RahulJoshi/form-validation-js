@@ -151,7 +151,7 @@ function chekPhoneNo(phoneNo){
     phoneNo = phoneNo.trimEnd();
     // console.log(typeof phoneNo)
     for(let i=0;i<phoneNo.length;i++){
-        if(!(phoneNo[i]>='0' && phoneNo[i]<='9' && phoneNo.length == 10 && (phoneNo[0] == '7' || phoneNo[8] == '8' || phoneNo[9] == '9'))){
+        if(!(phoneNo[i]>='0' && phoneNo[i]<='9' && phoneNo.length == 10 && (phoneNo[0] == '7' || phoneNo[0] == '8' || phoneNo[0] == '9'))){
             flag = true;
             document.getElementById("userPhoneNoError").innerHTML = "** Please enter valid phone no";
             break;
