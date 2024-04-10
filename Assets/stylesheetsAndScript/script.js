@@ -235,12 +235,38 @@ function confirmPassword(userPassword,confirmPassword){
 }
 
 function checkEmail(userEmail){
-    const regexEmail = /^[0-9a-zA-Z_]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z.]{2,6}$/;
-    if(!regexEmail.test(userEmail)){
+    // const regexEmail = /^[0-9a-zA-Z_]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z.]{2,6}$/;
+    // if(!regexEmail.test(userEmail)){
+    //     document.getElementById("userEmail").innerHTML = "** invalid email id";
+    //     return true;
+    // }
+    // else{
+    //     document.getElementById("userEmail").innerHTML = "";
+    //     return false;
+    // }
 
+    let splicedEmail = userEmail.split('@');
+    if(splicedEmail.length > 2 || splicedEmail.includes('')){
+        // some error message and return true;
     }
-    else{
 
+    let splicedEmailLeft = splicedEmail[0].split('.');
+    let splicedEmailRight = splicedEmail[1].split('.');
+
+    if(splicedEmailLeft.includes('') || splicedEmailRight.includes('')){
+        // some error message and return true;;
+    }
+
+    for(let i=0;i<splicedEmail[0].length;i++){
+        if(!((splicedEmail[i]>='a' && splicedEmail[i]<='z') || (splicedEmail[i]>='A' && splicedEmail[i]<='Z') || (splicedEmail[i]>='0' && splicedEmail[i]<='9') || splicedEmail[i] == '.') ){
+            // some error message break;
+        }
+    }
+
+    for(let i=0;i<splicedEmail[1].length;i++){
+        if(!((splicedEmail[i]>='a' && splicedEmail[i]<='z') || (splicedEmail[i]>='A' && splicedEmail[i]<='Z') || (splicedEmail[i]>='0' && splicedEmail[i]<='9') || splicedEmail[i] == '.') ){
+            // some error message break;
+        }
     }
 }
 
