@@ -243,6 +243,7 @@ function checkPassword(password){
     let numbers = 0;
     let specialCh = 0;
     let specialChString = "!@#$%^&*";
+
     for(let i=0;i<password.length;i++){
         if(password[i]>='a' && password[i]<='z'){
             smallCh++;
@@ -260,6 +261,13 @@ function checkPassword(password){
     }
     // console.log(password)
     // console.log(`small ch ${smallCh} capital ${capitalCh} number ${numbers} specialCh ${specialCh}`);
+
+    let confirmUserPass = document.getElementById("confirmPassword").value;
+    if(confirmUserPass !== ""){
+        console.log("in")
+        confirmPassword(password,confirmUserPass);
+    }
+
     if(password.length < 8){
         passwordError.innerHTML = "** Minimum Length should be eight";
         return true;
