@@ -352,7 +352,7 @@ function chekPhoneNoInput(e,val){
     let key = e.key;
     let backSpace = (e.which == 8)
     let enter = (e.which == 13)
-    if( !((key >='0' && key <='9') || backSpace || enter ) && val.length !== 10 ){
+    if( !((key >='0' && key <='9') || backSpace || enter || key == undefined ) && val.length !== 10 ){
         phoneNoError.innerHTML = "** Only digits are allowed";
         return false;
     }
